@@ -1,0 +1,306 @@
+@font-face {
+    font-family: "allura";
+    src: url(../font/Allura-Regular.ttf);
+}
+@font-face {
+    font-family: "poppins";
+    src: url(../font/Poppins-Regular.ttf);
+}
+
+/* GENERAL */
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+body {
+    font-family: "poppins";
+}
+h1{
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    font-size: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h1 span {
+    margin-bottom: -20px;
+}
+h2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+}
+h2 span {
+    font-size: 38px;
+    text-decoration: none ;
+    margin-bottom: -15px;
+}
+h3 {
+    color: #A57143;
+    text-transform: uppercase;
+}
+.allura {
+    font-family: "allura";
+    color: #A57143;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+}
+.allura a {
+    color: white;
+}
+.bloc {
+    display: block;
+}
+.btn {
+    text-transform: uppercase;
+    background-color: #161513;
+    color: white;
+    border-radius: 60px;
+    padding: 0.5rem 2rem;
+}
+
+/* HEADER */
+
+#banner {
+    position: relative;
+    height: 70vh;
+}
+
+/* BACKGROUND IMAGE BANNER */
+
+.backgroundbanner {
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    z-index: -1;
+}
+.bannerimg1 {
+    background-image: url(../img/bg-slider-01.jpg);
+    animation: banner 30s linear 20s infinite;
+}
+.bannerimg2 {
+    background-image: url(../img/bg-slider-05.jpg);
+    animation: banner 30s linear 10s infinite;
+}
+.bannerimg3 {
+    background-image: url(../img/bg-slider-06.jpg);
+    animation: banner 30s linear 0s infinite;
+}
+
+/* @keyframes banner {
+    0% {
+        opacity : 1;
+    }
+    33% {
+        opacity : 0;
+    }
+
+} */
+
+/* NAVIGATION */
+
+.navi {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+nav ul {
+    display: flex;
+}
+.navi h2 {
+    padding: 0 5vw;
+}
+nav a {
+    display: inline-block;
+    color: white;
+    text-transform: uppercase;
+    padding: 2vw;
+    font-weight: 600;
+}
+.reseaux {
+    display: flex;
+}
+.reseaux ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0 5vw;
+}
+.reseaux ul li a{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.reseaux img {
+    background-color: white;
+    height: 24px;
+}
+
+/* BANNER CONTENT */
+
+.bannercontent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.bannercontent h1 {
+    margin-top: 10rem;
+}
+.bannercontent p {
+    text-transform: uppercase;
+    letter-spacing: 0.4rem;
+}
+.bannercontent img {
+    margin:  2rem 0;
+}
+
+/* MAIN */
+/* DISCOVER */
+
+#discover {
+    display: flex;
+}
+#discover div:first-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 43vw;
+    padding: 5vh 5vw;
+    margin: 2vh 2vw;
+    border: 1px dashed #A57143;
+    text-align: center;
+}
+#discover div img {
+    margin: 2rem 0;
+}
+#discover div img:nth-last-child(3) {
+    border-radius: 50%;
+}
+#discover div p:nth-last-child(2){
+    font-size: x-large;
+}
+#discover div p:nth-last-child(1) {
+    color: #A57143;
+    text-transform: uppercase;
+    font-size: larger;
+}
+#discover div:last-child {
+    width: 50vw;
+    background-image: url(../img/dish-gallery-06.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/* MENU */
+
+#menu {
+    background-color: rgba(33, 32, 30,0.9);
+}
+#menu div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#menu span {
+    margin-top: 4rem;
+}
+#menu img {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+#menu ul {
+    display: flex;
+    margin-bottom: 6rem;
+}
+#menu a {
+    text-decoration: underline;
+    color: white;
+    margin: 0 2rem;
+}
+.backgroundimgmenu {
+    background-image: url(../img/bg-menu-01.jpg);
+    background-size: cover;
+    height: 30vh;
+}
+
+/* RESERVATION */
+/* CARD LEFT SIDE */
+
+#reservation {
+    background-color: rgba(33, 32, 30,0.9);
+}
+#reservation .card {
+    padding: 5vh 15vw;
+    display: flex;
+}
+.backgroundopentime {
+    background-color: #161513;
+}
+.opentime {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    padding: 2rem;
+    border: 1px dotted #A57143;
+    color: white;
+}
+.opentime h3 {
+    margin-top: 2rem;
+}
+.opentime h3:nth-last-child(1) {
+    margin-bottom: 2rem;
+}
+.opentime img {
+    margin-top: 2rem;
+}
+
+/* CARD RIGHT SIDE */
+
+.onlinereservation {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.onlinereservation div {
+    display: grid;
+    grid-template-columns: 3fr 3fr 3fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem  ;
+}
+
+
+
+
+
+
+
+
+
+
+/* 
+Changer le style des inputs
+Faire les Hover
+Faire le menu des plats en active
+Faire le bouton
+Remettre l'animation du header
+*/
