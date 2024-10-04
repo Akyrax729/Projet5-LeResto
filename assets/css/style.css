@@ -248,7 +248,7 @@ nav a {
 #menu .menu:hover {
     color: #A57143;
 }
-#menu .menu:target .hidden1 {
+#menu .menu:hover .hidden1 {
     display: grid;
 }
 #menu .hidden1{
@@ -261,17 +261,19 @@ nav a {
     grid-template-columns: 10fr 10fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     width: 70vw;
-    left: -20vw;
-    top: 5vh;
+    left: -20.2vw;
+    top: 4vh;
 }
 #menu .hidden1::before {
     content: "";
     border-right : 15px solid transparent;
     border-bottom : 15px solid #A57143;
     border-left : 15px solid transparent;
+    padding: 50px;
+    padding-bottom: 0;
     position: absolute;
-    top: -15px;
-    left: 23.5vw;
+    top: -65px;
+    left: 20.5vw;
     z-index: 1;
 }
 #menu .hidden1 img {
@@ -346,6 +348,10 @@ nav a {
     grid-template-rows: 1fr 1fr;
     gap: 1rem  ;
     margin: 2rem 0;
+}
+.onlinereservation input {
+    border: none;
+    border-bottom: 1px solid #161513;
 }
 
 /* GALLERY */
@@ -507,13 +513,10 @@ nav a {
     position: relative;
 }
 #temoignage img {
-    /* position: absolute; */
     border-radius: 50%;
     width: 100px;
     margin-top: -7rem;
     margin-bottom: 1rem;
-    /* top:-55px;
-    left: calc(50%); */
 }
 #temoignage div{
     display: flex;
@@ -536,6 +539,13 @@ nav a {
 }
 #temoignage div p:nth-last-child(2){
     font-size: larger;
+}
+#temoignage input {
+    display: inline-block;
+    margin: 0 0.5rem;
+}
+#radio1 {
+    accent-color: #A57143;
 }
 
 /* MAP */
@@ -700,17 +710,3 @@ footer .reseaux a i{
         margin:6rem 0;
     }
 }
-
-
-
-
-
-
-
-/* 
-Changer le style des inputs
-Faire le menu des plats en active ****
-faire le responsive du grid
-Remettre l'animation du header
-faire le style des input radio
-*/
