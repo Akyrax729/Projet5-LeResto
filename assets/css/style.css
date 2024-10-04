@@ -17,6 +17,7 @@
 }
 body {
     font-family: "poppins";
+    background-color: #21201E;
 }
 h1{
     text-transform: uppercase;
@@ -59,12 +60,29 @@ h3 {
 .bloc {
     display: block;
 }
+.fondgris {
+    background-color: #21201E;
+}
+.fondblanc {
+    background-color: white;
+}
 .btn {
     text-transform: uppercase;
     background-color: #161513;
     color: white;
     border-radius: 60px;
     padding: 0.5rem 2rem;
+    font-size: 12px;
+    border: 1px solid white;
+}
+.btn:hover {
+    color: #161513;
+    background-color: white;
+    border: 1px solid #161513;
+}
+a:hover {
+    text-decoration: underline;
+    color: #A57143;
 }
 
 /* HEADER */
@@ -87,18 +105,18 @@ h3 {
 }
 .bannerimg1 {
     background-image: url(../img/bg-slider-01.jpg);
-    animation: banner 30s linear 20s infinite;
+    animation: banner 60s linear 40s infinite;
 }
 .bannerimg2 {
     background-image: url(../img/bg-slider-05.jpg);
-    animation: banner 30s linear 10s infinite;
+    animation: banner 60s linear 20s infinite;
 }
 .bannerimg3 {
     background-image: url(../img/bg-slider-06.jpg);
-    animation: banner 30s linear 0s infinite;
+    animation: banner 60s linear 0s infinite;
 }
 
-/* @keyframes banner {
+@keyframes banner {
     0% {
         opacity : 1;
     }
@@ -106,7 +124,7 @@ h3 {
         opacity : 0;
     }
 
-} */
+}
 
 /* NAVIGATION */
 
@@ -135,16 +153,12 @@ nav a {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    flex-wrap: wrap;
     padding: 0 5vw;
 }
 .reseaux ul li a{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-.reseaux img {
-    background-color: white;
-    height: 24px;
+    padding: 1vw;
+    color: white;
 }
 
 /* BANNER CONTENT */
@@ -208,9 +222,6 @@ nav a {
 
 /* MENU */
 
-#menu {
-    background-color: rgba(33, 32, 30,0.9);
-}
 #menu div {
     display: flex;
     flex-direction: column;
@@ -227,27 +238,70 @@ nav a {
 #menu ul {
     display: flex;
     margin-bottom: 6rem;
+    position: relative;
 }
-#menu a {
+#menu .menu {
     text-decoration: underline;
     color: white;
     margin: 0 2rem;
 }
+#menu .menu:hover {
+    color: #A57143;
+}
+#menu .menu:target .hidden1 {
+    display: grid;
+}
+#menu .hidden1{
+    position: absolute;
+    z-index: 0;
+    border-top: 5px solid #A57143;
+    background-color: white;
+    color: #5A5956;
+    display: none;
+    grid-template-columns: 10fr 10fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    width: 70vw;
+    left: -20vw;
+    top: 5vh;
+}
+#menu .hidden1::before {
+    content: "";
+    border-right : 15px solid transparent;
+    border-bottom : 15px solid #A57143;
+    border-left : 15px solid transparent;
+    position: absolute;
+    top: -15px;
+    left: 23.5vw;
+    z-index: 1;
+}
+#menu .hidden1 img {
+    border-radius: 50%;
+    margin: 1rem 0;
+}
+.hidden1 article {
+    display: flex;
+    justify-content: space-around;
+}
+.hidden1 article p{
+    display: flex;
+    align-items: center;
+}
+.hidden1 article p:nth-child(3) {
+    color: #A57143;
+}
 .backgroundimgmenu {
     background-image: url(../img/bg-menu-01.jpg);
     background-size: cover;
-    height: 30vh;
+    height: 60vh;
 }
 
 /* RESERVATION */
 /* CARD LEFT SIDE */
 
-#reservation {
-    background-color: rgba(33, 32, 30,0.9);
-}
 #reservation .card {
-    padding: 5vh 15vw;
+    padding: 5vh 10vw;
     display: flex;
+    justify-content: center;
 }
 .backgroundopentime {
     background-color: #161513;
@@ -257,6 +311,7 @@ nav a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
     margin: 1rem;
     padding: 2rem;
     border: 1px dotted #A57143;
@@ -280,16 +335,371 @@ nav a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 50vw;
+}
+.onlinereservation h2 {
+    margin: 2rem 0;
 }
 .onlinereservation div {
     display: grid;
     grid-template-columns: 3fr 3fr 3fr;
     grid-template-rows: 1fr 1fr;
     gap: 1rem  ;
+    margin: 2rem 0;
+}
+
+/* GALLERY */
+
+#gallery {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#gallery h2 {
+    margin: 2rem 0;
+    color: white;
+}
+#gallery div {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+#gallery div img {
+    max-width: 25vw;
+    min-width: 250px; 
 }
 
 
+/* EVENT */
 
+#event {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#event h2 {
+    padding-top: 5rem;
+    color: white;
+}
+#event img {
+    margin: 2rem 0;
+}
+.cardcolumn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap-reverse;
+}
+#event .fondblanc {
+    display: flex;
+    flex-direction: column;
+}
+#event .fondblanc div {
+    display: flex;
+}
+.cardevent {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5%;
+    margin-right: 2rem;
+    width: 100%;
+}
+.height50 {
+    height: 46.5%;
+}
+.height100 {
+    height: 100%;
+}
+.eventimg1 {
+    background-image: url(../img/event-01.jpg);
+    background-size: cover;
+    width: 12rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.eventimg2 {
+    background-image: url(../img/event-02.jpg);
+    background-size: cover;
+    width: 12rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.eventimg3 {
+    background-image: url(../img/event-03.jpg);
+    background-size: cover;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#event .fondblanc p {
+    padding-right: 0.5rem;
+    padding-bottom: 1rem;
+    color: #A9A69E;
+}
+#event .eventimg1 .fondgris, #event .eventimg2 .fondgris {
+    /* width: 40%;
+    height: 45%; */
+    padding: 1rem 2rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#event .fondblanc {
+    padding: 2rem 1rem;
+}
+#event .fondblanc h4 {
+    font-size: 28px;
+    font-weight: 400;
+}
+#event .fondblanc a {
+    text-transform: uppercase;
+    color: black;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    font-size: 16px;
+}
+#event .eventimg3 .fondblanc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#event .eventimg3 .fondblanc {
+    padding: 0 1rem 2rem 1rem;
+}
+#event .eventimg3 .fondgris {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    margin-bottom: 4rem;
+}
+#event .eventimg3 .fondgris p {
+    color: white;
+    padding: 0;
+}
+#event .eventimg3 h4 {
+    text-align: center;
+}
+#event .eventimg3 a {
+    margin-bottom: 2rem;
+}
+
+/* TEMOIGNAGE */
+
+#temoignage {
+    margin: 6rem 20vw 0 20vw;
+    padding: 4rem 2rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+#temoignage img {
+    /* position: absolute; */
+    border-radius: 50%;
+    width: 100px;
+    margin-top: -7rem;
+    margin-bottom: 1rem;
+    /* top:-55px;
+    left: calc(50%); */
+}
+#temoignage div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    font-size: 12px;
+}
+#temoignage div:nth-child(3){
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+#temoignage div p:nth-last-child(1){
+    color: #A57143;
+    text-transform: uppercase;
+}
+#temoignage div p:nth-last-child(2){
+    font-size: larger;
+}
+
+/* MAP */
+
+#map {
+    margin-top: -4rem;
+    margin-bottom: -0.4rem;
+}
+
+/* FOOTER */
+
+footer section{
+    display: flex;
+    flex-wrap: wrap;
+}
+footer div{
+    display: flex;
+    flex-direction: column;
+}
+footer .cardfooter1 {
+    background-color: #161513;
+    width: 35vw;
+    padding: 4rem 2vw 4rem 15vw;
+    color: white;
+}
+.cardfooter1 h2 {
+    display: block;
+    padding: 0;
+}
+.cardfooter1 h2 a {
+    color: #A57143;
+    font-weight: 500;
+    font-size: 42px;
+}
+.cardfooter2 {
+    display: flex;
+    justify-content: center;
+    padding: 4rem 12vw 4rem 8vw;
+    color: white;
+}
+.cardfooter2 label {
+    margin-bottom: 0.4rem;
+}
+.cardfooter2 input {
+    margin-bottom: 1.5rem;
+}
+footer .reseaux {
+    flex-direction: row;
+}
+footer .reseaux ul {
+    padding: 0;
+}
+footer .reseaux a i{
+    color: #5A5956;
+}
+
+/* RESPONSIVE */
+
+@media screen and (max-width:1150px) {
+    
+    /* RESERVATION */
+
+    .onlinereservation div {
+        grid-template-columns: 3fr 3fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+
+
+
+
+}
+
+@media screen and (max-width:1000px){
+
+    /* HEADER NAV */
+
+    .navi {
+        flex-direction: column;
+    }
+
+}
+
+
+@media screen and (max-width:800px){
+
+    /* DISCOVER */
+
+    #discover div:first-child {
+        width: auto;
+    }
+    #discover div:last-child {
+        display: none;
+    }
+
+    /* RESERVATION */
+
+    .card {
+        padding: 0;
+        margin: 0;
+        flex-wrap: wrap;
+    }
+    .backgroundopentime {
+        width: 100%;
+    }
+    .onlinereservation {
+        width: 100%;
+    }
+    .onlinereservation div {
+        grid-template-columns: 3fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    }
+
+    /* GALLERY */
+
+    #gallery div {
+        grid-template-columns: 2fr 2fr;
+        grid-template-rows: 1fr 1fr 1fr ;
+    }
+
+    /* FOOTER */
+
+    footer .cardfooter1, footer .cardfooter2 {
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        padding: 2vh 5vw;
+        margin: 0;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width:600px) {
+
+    /* NAVIGATION */
+
+    .navi ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    .navi .reseaux {
+        display: none;
+    }
+
+    /* DISCOVER */
+
+    #menu ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* GALLERY  */
+
+    #gallery div {
+        grid-template-columns: 2fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+
+    /* TEMOIGNAGE */
+
+    #temoignage {
+        margin:6rem 0;
+    }
+}
 
 
 
@@ -299,8 +709,8 @@ nav a {
 
 /* 
 Changer le style des inputs
-Faire les Hover
-Faire le menu des plats en active
-Faire le bouton
+Faire le menu des plats en active ****
+faire le responsive du grid
 Remettre l'animation du header
+faire le style des input radio
 */
